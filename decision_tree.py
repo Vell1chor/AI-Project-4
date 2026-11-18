@@ -165,10 +165,10 @@ def prune(tree, X, y):
 # The hyperparameters used for the final model. These placeholder values are
 # deliberately very poor. Replace all of them with values you have tuned.
 HYPERPARAMETERS = {
-    "max_depth": 12,
-    "min_samples_split": 1000,
-    "min_samples_leaf": 2000,
-    "min_gain": 0.3,
+    "max_depth": 9,
+    "min_samples_split": 80,
+    "min_samples_leaf": 25,
+    "min_gain": 0.0,
 }
 
 
