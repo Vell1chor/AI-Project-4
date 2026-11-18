@@ -32,7 +32,7 @@ def majority_label(y):
 
     y = np.array(y)
     ones = int(np.sum(y == 1))
-    nones = len(y - ones)
+    nones = len(y) - ones
     if ones > nones:
         return 1.0
     return 0.0
@@ -44,7 +44,7 @@ def best_split(X, y, min_samples_leaf=1):
     X = np.array(X)
     y = np.array(y)
     if len(y) == 0:
-        return 0.0
+        return None
 
     best = None
     best_gain = 0.0
@@ -104,7 +104,7 @@ def predict_one(tree, row, i=0):
 
     while not is_leaf(tree, i):
         f = int(tree[i, FEATURE])
-        if row[f] <= tree[i, FEATURE]:
+        if row[f] <= tree[i, THRESHOLD]:
             i = int(tree[i, LEFT])
         else:
             i = int(tree[i, RIGHT])
