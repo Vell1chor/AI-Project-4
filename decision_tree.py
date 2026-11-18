@@ -108,7 +108,7 @@ def predict_one(tree, row, i=0):
             i = int(tree[i, LEFT])
         else:
             i = int(tree[i, RIGHT])
-    return int(tree[i, FEATURE])
+    return int(tree[i, LABEL])
 
 
 def predict(tree, X):
@@ -165,10 +165,10 @@ def prune(tree, X, y):
 # The hyperparameters used for the final model. These placeholder values are
 # deliberately very poor. Replace all of them with values you have tuned.
 HYPERPARAMETERS = {
-    "max_depth": 1,
-    "min_samples_split": 20000,
-    "min_samples_leaf": 5000,
-    "min_gain": 0.5,
+    "max_depth": 12,
+    "min_samples_split": 1000,
+    "min_samples_leaf": 2000,
+    "min_gain": 0.3,
 }
 
 
